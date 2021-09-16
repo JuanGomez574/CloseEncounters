@@ -84,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Creature.cs" />
     <Compile Include="Encounter.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Location.cs" />
