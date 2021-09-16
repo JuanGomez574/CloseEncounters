@@ -8,21 +8,20 @@ using System.Threading.Tasks;
 
 namespace CloseEncounters.Data
 {
-    public class Encounter
+   public class Location
     {
         [Key]
-        public int EncounterId { get; set; }
+        public int LocationId { get; set; }
         [Required]
-        public string DescriptionOfEncounter { get; set; }
-        [Required]
-        public DateTime DateOfEncounter { get; set; }
+        public int NumberOfEncounters { get; set; }
         [Required]
         public Guid AuthorId { get; set; }
-        [ForeignKey(nameof (Creature))]
+        [ForeignKey(nameof(Creature))]
         public int CreatureId { get; set; }
         public virtual Creature Creature { get; set; }
-        [ForeignKey(nameof(Location))]
-        public int LocationId { get; set; }
-        public virtual Location Location { get; set; }
+        [ForeignKey(nameof(Encounter))]
+        public int  EncounterId { get; set; }
+        public virtual Encounter Encounter { get; set; }
+
     }
 }

@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Encounter.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Location.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
