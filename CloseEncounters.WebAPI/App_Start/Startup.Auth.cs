@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using CloseEncounters.WebAPI.Providers;
 using CloseEncounters.WebAPI.Models;
+using CloseEncounters.Data;
 
 namespace CloseEncounters.WebAPI
 {
