@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EncounterCreate.cs" />
+    <Compile Include="EncounterEdit.cs" />
     <Compile Include="EncounterListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
