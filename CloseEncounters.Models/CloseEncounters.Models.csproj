@@ -57,6 +57,9 @@
     <Compile Include="EncounterCreate.cs" />
     <Compile Include="EncounterEdit.cs" />
     <Compile Include="EncounterListItem.cs" />
+    <Compile Include="LocationCreate.cs" />
+    <Compile Include="LocationEdit.cs" />
+    <Compile Include="LocationListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

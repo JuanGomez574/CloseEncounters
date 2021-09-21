@@ -24,5 +24,6 @@ namespace CloseEncounters.Data
         [ForeignKey(nameof(Location))]
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
+        public int NumberOfEncounters { get; set; }
     }
 }
