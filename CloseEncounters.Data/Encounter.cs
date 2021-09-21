@@ -19,10 +19,10 @@ namespace CloseEncounters.Data
         [Required]
         public Guid AuthorId { get; set; }
         [ForeignKey(nameof (Creature))]
-        public int CreatureId { get; set; }
+        public int? CreatureId { get; set; }
         public virtual Creature Creature { get; set; }
         [ForeignKey(nameof(Location))]
-        public int LocationId { get; set; }
+        public int? LocationId { get; set; }
         public virtual Location Location { get; set; }
     }
 }

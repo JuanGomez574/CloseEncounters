@@ -54,12 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="EncounterService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CloseEncounters.Data\CloseEncounters.Data.csproj">
+      <Project>{41741211-41E4-48AD-9FBA-7514AD8D931B}</Project>
+      <Name>CloseEncounters.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloseEncounters.Models\CloseEncounters.Models.csproj">
+      <Project>{5FB042A7-D0BF-4D23-AADF-A351EC4E06CF}</Project>
+      <Name>CloseEncounters.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
