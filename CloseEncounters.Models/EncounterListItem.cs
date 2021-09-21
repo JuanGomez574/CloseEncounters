@@ -11,7 +11,7 @@ namespace CloseEncounters.Models
         public int EncounterId { get; set; }
         public string DescriptionOfEncounter { get; set; }
         public DateTime DateOfEncounter { get; set; }
-        public int CreatureId { get; set; }
-        public int LocationId { get; set; }
+        public int? CreatureId { get; set; }
+        public int? LocationId { get; set; }
     }
 }

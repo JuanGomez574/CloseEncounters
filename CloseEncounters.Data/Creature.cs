@@ -16,9 +16,6 @@ namespace CloseEncounters.Data
         public string DescriptionOfCreature { get; set; }
         [Required]
         public Guid AuthorId { get; set; }
-        [ForeignKey(nameof(Encounter))]
-        public int EncounterId { get; set; }
-        public virtual Encounter Encounter { get; set; }
         [Required]
         public string CreatureType { get; set; }
         [Required]

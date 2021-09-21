@@ -88,11 +88,28 @@
     <Compile Include="Encounter.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="Migrations\202109212237380_InitialCreate.cs" />
+    <Compile Include="Migrations\202109212237380_InitialCreate.Designer.cs">
+      <DependentUpon>202109212237380_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202109212307488_ChangedForeignKeys.cs" />
+    <Compile Include="Migrations\202109212307488_ChangedForeignKeys.Designer.cs">
+      <DependentUpon>202109212307488_ChangedForeignKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202109212237380_InitialCreate.resx">
+      <DependentUpon>202109212237380_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109212307488_ChangedForeignKeys.resx">
+      <DependentUpon>202109212307488_ChangedForeignKeys.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
