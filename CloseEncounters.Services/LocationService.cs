@@ -23,10 +23,9 @@ namespace CloseEncounters.Services
                 new Location()
                 {
                     AuthorId = _userId,
-                    CreatureId = model.CreatureId,
                     NumberOfEncounters = model.NumberOfEncounters,
                     LocationId = model.LocationId,
-                    EncounterId = model.EncounterId
+                    
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -48,8 +47,6 @@ namespace CloseEncounters.Services
                             e =>
                                 new LocationListItem
                                 {
-                                    EncounterId = e.EncounterId,
-                                    CreatureId = e.CreatureId,
                                     NumberOfEncounters= e.NumberOfEncounters,
                                     LocationId = e.LocationId,
                                 }
@@ -69,9 +66,8 @@ namespace CloseEncounters.Services
                         .Locations
                         .Single(e => e.LocationId == model.LocationId && e.AuthorId == _userId);
 
-                entity.EncounterId = model.EncounterId;
+                
                 entity.NumberOfEncounters = model.NumberOfEncounters;
-                entity.CreatureId = model.CreatureId;
                 entity.LocationId = model.LocationId;
 
                 return ctx.SaveChanges() == 1;

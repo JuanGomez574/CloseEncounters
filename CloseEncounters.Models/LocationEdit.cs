@@ -10,8 +10,5 @@ namespace CloseEncounters.Models
     {
         public int LocationId { get; set; }
         public int NumberOfEncounters { get; set; }
-        public int CreatureId { get; set; }
-        public int EncounterId { get; set; }
-        
-    }
+        }
 }

@@ -16,6 +16,6 @@ namespace CloseEncounters.Data
         public int NumberOfEncounters { get; set; }
         [Required]
         public Guid AuthorId { get; set; }
-
+        
     }
 }
