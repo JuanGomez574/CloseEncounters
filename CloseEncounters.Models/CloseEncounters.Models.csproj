@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreatureCreate.cs" />
+    <Compile Include="CreatureEdit.cs" />
+    <Compile Include="CreatureListItem.cs" />
     <Compile Include="EncounterCreate.cs" />
     <Compile Include="EncounterEdit.cs" />
     <Compile Include="EncounterListItem.cs" />
