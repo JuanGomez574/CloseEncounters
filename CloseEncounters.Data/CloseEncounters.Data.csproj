@@ -96,6 +96,10 @@
     <Compile Include="Migrations\202109212307488_ChangedForeignKeys.Designer.cs">
       <DependentUpon>202109212307488_ChangedForeignKeys.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202109232211565_ModifiedLocationEntity.cs" />
+    <Compile Include="Migrations\202109232211565_ModifiedLocationEntity.Designer.cs">
+      <DependentUpon>202109232211565_ModifiedLocationEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -109,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202109212307488_ChangedForeignKeys.resx">
       <DependentUpon>202109212307488_ChangedForeignKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202109232211565_ModifiedLocationEntity.resx">
+      <DependentUpon>202109232211565_ModifiedLocationEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
