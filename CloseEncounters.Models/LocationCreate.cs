@@ -12,6 +12,7 @@ namespace CloseEncounters.Models
         [Required]
         public int NumberOfEncounters { get; set; }
        public int LocationId { get; set; }
+        public string LocationName { get; set; }
     }
 }
 

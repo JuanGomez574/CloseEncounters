@@ -55,12 +55,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreatureCreate.cs" />
+    <Compile Include="CreatureDetail.cs" />
     <Compile Include="CreatureEdit.cs" />
     <Compile Include="CreatureListItem.cs" />
     <Compile Include="EncounterCreate.cs" />
+    <Compile Include="EncounterDetail.cs" />
     <Compile Include="EncounterEdit.cs" />
     <Compile Include="EncounterListItem.cs" />
     <Compile Include="LocationCreate.cs" />
+    <Compile Include="LocationDetail.cs" />
     <Compile Include="LocationEdit.cs" />
     <Compile Include="LocationListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

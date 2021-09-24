@@ -19,6 +19,13 @@ namespace CloseEncounters.WebAPI.Controllers
             return Ok(creatures);
         }
 
+        public IHttpActionResult Get(Guid authorId)
+        {
+            CreatureService creatureService = CreateCreatureService();
+            var creature = creatureService.GetCreatureByAuthorId(authorId);
+            return Ok(creature);
+        }
+
         public IHttpActionResult Post(CreatureCreate creature)
         {
             if (!ModelState.IsValid)

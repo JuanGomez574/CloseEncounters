@@ -57,6 +57,25 @@ namespace CloseEncounters.Services
             }
         }
 
+        public LocationDetail GetLocationByAuthorId(Guid authorId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Locations
+                        .Single(e => e.AuthorId == authorId);
+                return
+                    new LocationDetail
+                    {
+                        AuthorId = entity.AuthorId,
+                        LocationId = entity.LocationId,
+                        LocationName = entity.LocationName,
+                        NumberOfEncounters = entity.NumberOfEncounters
+                    };
+            }
+        }
+
         public bool UpdateLocation(LocationEdit model)
         {
             using (var ctx = new ApplicationDbContext())
