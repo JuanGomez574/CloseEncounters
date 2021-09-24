@@ -20,6 +20,13 @@ namespace CloseEncounters.WebAPI.Controllers
             return Ok(Locations);
         }
 
+        public IHttpActionResult Get(Guid authorId)
+        {
+            LocationService locationService = CreateLocationService();
+            var location = locationService.GetLocationByAuthorId(authorId);
+            return Ok(location);
+        }
+
         public IHttpActionResult Post(LocationCreate location)
         {
             if (!ModelState.IsValid)

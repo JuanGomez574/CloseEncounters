@@ -65,6 +65,29 @@ namespace CloseEncounters.Services
             }
         }
 
+        public CreatureDetail GetCreatureByAuthorId(Guid authorId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Creatures
+                        .FirstOrDefault(e => e.AuthorId == authorId);
+                return
+                    new CreatureDetail
+                    {
+                        AuthorId = entity.AuthorId,
+                        CreatureId = entity.CreatureId,
+                        CreatureType = entity.CreatureType,
+                        DescriptionOfCreature = entity.DescriptionOfCreature,
+                        Height = entity.Height,
+                        MythicalOrFolktale = entity.MythicalOrFolktale,
+                        Name = entity.Name,
+                        Weight = entity.Weight
+                    };
+            }
+        }
+
         public bool UpdateCreature(CreatureEdit model)
         {
             using (var ctx = new ApplicationDbContext())
