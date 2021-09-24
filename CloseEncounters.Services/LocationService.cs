@@ -25,7 +25,8 @@ namespace CloseEncounters.Services
                     AuthorId = _userId,
                     NumberOfEncounters = model.NumberOfEncounters,
                     LocationId = model.LocationId,
-                    
+                    LocationName = model.LocationName
+
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -49,6 +50,7 @@ namespace CloseEncounters.Services
                                 {
                                     NumberOfEncounters= e.NumberOfEncounters,
                                     LocationId = e.LocationId,
+                                    LocationName = e.LocationName
                                 }
                                 );
 
@@ -88,6 +90,7 @@ namespace CloseEncounters.Services
                 
                 entity.NumberOfEncounters = model.NumberOfEncounters;
                 entity.LocationId = model.LocationId;
+                entity.LocationName = model.LocationName;
 
                 return ctx.SaveChanges() == 1;
             }
