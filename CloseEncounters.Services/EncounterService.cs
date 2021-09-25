@@ -43,11 +43,11 @@ namespace CloseEncounters.Services
                 var query =
                     ctx
                         .Encounters
-                        .Where(e => e.AuthorId == _userId)
                         .Select(
                             e =>
                                 new EncounterListItem
                                 {
+                                    AuthorId = e.AuthorId,
                                     EncounterId = e.EncounterId,
                                     CreatureId = e.CreatureId,
                                     DateOfEncounter = e.DateOfEncounter,
@@ -61,24 +61,28 @@ namespace CloseEncounters.Services
             }
         }
 
-        public EncounterDetail GetEncounterByAuthorId(Guid authorId)
+        public IEnumerable<EncounterDetail> GetEncounterByAuthorId(Guid authorId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Encounters
-                        .Single(e => e.AuthorId == authorId);
-                return
-                    new EncounterDetail
-                    {
-                        AuthorId = entity.AuthorId,
-                        EncounterId = entity.EncounterId,
-                        CreatureId = entity.CreatureId,
-                        DateOfEncounter = entity.DateOfEncounter,
-                        DescriptionOfEncounter = entity.DescriptionOfEncounter,
-                        LocationId = entity.LocationId
-                    };
+                        .Where(e => e.AuthorId == authorId)
+                        .Select(
+                            e =>
+                                new EncounterDetail
+                                {
+                                    AuthorId = e.AuthorId,
+                                    EncounterId = e.EncounterId,
+                                    CreatureId = e.CreatureId,
+                                    DateOfEncounter = e.DateOfEncounter,
+                                    DescriptionOfEncounter = e.DescriptionOfEncounter,
+                                    LocationId = e.LocationId
+                                }
+                                );
+
+                return entity.ToArray();
             }
         }
 

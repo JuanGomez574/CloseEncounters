@@ -1,6 +1,7 @@
 ﻿using CloseEncounters.Data;
 using CloseEncounters.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,11 +46,11 @@ namespace CloseEncounters.Services
                 var query =
                     ctx
                         .Creatures
-                        .Where(e => e.AuthorId == _userId)
                         .Select(
                             e =>
                                 new CreatureListItem
                                 {
+                                    AuthorId = e.AuthorId,
                                     CreatureId = e.CreatureId,
                                     DescriptionOfCreature = e.DescriptionOfCreature,
                                     CreatureType = e.CreatureType,
@@ -65,26 +66,30 @@ namespace CloseEncounters.Services
             }
         }
 
-        public CreatureDetail GetCreatureByAuthorId(Guid authorId)
+        public IEnumerable<CreatureDetail> GetCreatureByAuthorId(Guid authorId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Creatures
-                        .FirstOrDefault(e => e.AuthorId == authorId);
-                return
+                        .Where(e => e.AuthorId == authorId)
+                        .Select(
+                            e =>
+ 
                     new CreatureDetail
                     {
-                        AuthorId = entity.AuthorId,
-                        CreatureId = entity.CreatureId,
-                        CreatureType = entity.CreatureType,
-                        DescriptionOfCreature = entity.DescriptionOfCreature,
-                        Height = entity.Height,
-                        MythicalOrFolktale = entity.MythicalOrFolktale,
-                        Name = entity.Name,
-                        Weight = entity.Weight
-                    };
+                        AuthorId = e.AuthorId,
+                        CreatureId = e.CreatureId,
+                        CreatureType = e.CreatureType,
+                        DescriptionOfCreature = e.DescriptionOfCreature,
+                        Height = e.Height,
+                        MythicalOrFolktale = e.MythicalOrFolktale,
+                        Name = e.Name,
+                        Weight = e.Weight
+                    }
+                    );
+                return entity.ToArray();
             }
         }
 
