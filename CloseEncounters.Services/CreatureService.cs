@@ -93,6 +93,33 @@ namespace CloseEncounters.Services
             }
         }
 
+        public IEnumerable<CreatureListItem> GetCreatureByCreatureId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Creatures
+                        .Where(e => e.CreatureId == id)
+                        .Select(
+                            e =>
+
+                     new CreatureListItem
+                     {
+                         AuthorId = e.AuthorId,
+                         CreatureId = e.CreatureId,
+                         CreatureType = e.CreatureType,
+                         DescriptionOfCreature = e.DescriptionOfCreature,
+                         Height = e.Height,
+                         MythicalOrFolktale = e.MythicalOrFolktale,
+                         Name = e.Name,
+                         Weight = e.Weight
+                     }
+                    );
+                return entity.ToArray();
+            }
+        }
+
         public bool UpdateCreature(CreatureEdit model)
         {
             using (var ctx = new ApplicationDbContext())
