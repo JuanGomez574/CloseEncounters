@@ -82,6 +82,29 @@ namespace CloseEncounters.Services
             }
         }
 
+        public IEnumerable<LocationListItem> GetLocationByLocationId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Locations
+                        .Where(e => e.LocationId == id)
+                        .Select(
+                            e =>
+
+                     new LocationListItem
+                     {
+                         AuthorId = e.AuthorId,
+                         LocationId = e.LocationId,
+                         LocationName=e.LocationName,
+                         NumberOfEncounters=e.NumberOfEncounters,
+                     }
+                    );
+                return entity.ToArray();
+            }
+        }
+
         public bool UpdateLocation(LocationEdit model)
         {
             using (var ctx = new ApplicationDbContext())

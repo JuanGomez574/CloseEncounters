@@ -26,6 +26,13 @@ namespace CloseEncounters.WebAPI.Controllers
             return Ok(encounter);
         }
 
+        public IHttpActionResult Get(int id)
+        {
+            EncounterService encounterService = CreateEncounterService();
+            var encounter = encounterService.GetEncounterByEncounterId(id);
+            return Ok(encounter);
+        }
+
         public IHttpActionResult Post(EncounterCreate encounter)
         {
             if (!ModelState.IsValid)
