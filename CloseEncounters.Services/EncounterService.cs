@@ -86,6 +86,31 @@ namespace CloseEncounters.Services
             }
         }
 
+        public IEnumerable<EncounterListItem> GetEncounterByEncounterId(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Encounters
+                        .Where(e => e.EncounterId == id)
+                        .Select(
+                            e =>
+
+                     new EncounterListItem
+                     {
+                         AuthorId = e.AuthorId,
+                         EncounterId = e.EncounterId,
+                         CreatureId = e.CreatureId,
+                         DateOfEncounter = e.DateOfEncounter,
+                         DescriptionOfEncounter = e.DescriptionOfEncounter,
+                         LocationId = e.LocationId
+                       }
+                    );
+                return entity.ToArray();
+            }
+        }
+
         public bool UpdateEncounter(EncounterEdit model)
         {
             using (var ctx = new ApplicationDbContext())

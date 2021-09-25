@@ -27,6 +27,13 @@ namespace CloseEncounters.WebAPI.Controllers
             return Ok(location);
         }
 
+        public IHttpActionResult Get(int id)
+        {
+            LocationService locationService = CreateLocationService();
+            var location = locationService.GetLocationByLocationId(id);
+            return Ok(location);
+        }
+
         public IHttpActionResult Post(LocationCreate location)
         {
             if (!ModelState.IsValid)
