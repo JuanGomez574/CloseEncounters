@@ -46,7 +46,6 @@ namespace CloseEncounters.Services
                 var query =
                     ctx
                         .Creatures
-                        //.Where(e => e.AuthorId == _userId)
                         .Select(
                             e =>
                                 new CreatureListItem

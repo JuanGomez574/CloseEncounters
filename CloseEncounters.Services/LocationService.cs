@@ -25,7 +25,7 @@ namespace CloseEncounters.Services
                     AuthorId = _userId,
                     NumberOfEncounters = model.NumberOfEncounters,
                     LocationId = model.LocationId,
-                    
+                    LocationName = model.LocationName
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -42,7 +42,6 @@ namespace CloseEncounters.Services
                 var query =
                     ctx
                         .Locations
-                        .Where(e => e.AuthorId == _userId)
                         .Select(
                             e =>
                                 new LocationListItem
@@ -50,6 +49,7 @@ namespace CloseEncounters.Services
                                     AuthorId = e.AuthorId,
                                     NumberOfEncounters= e.NumberOfEncounters,
                                     LocationId = e.LocationId,
+                                    LocationName = e.LocationName
                                 }
                                 );
 
@@ -58,22 +58,26 @@ namespace CloseEncounters.Services
             }
         }
 
-        public LocationDetail GetLocationByAuthorId(Guid authorId)
+        public IEnumerable<LocationDetail> GetLocationByAuthorId(Guid authorId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Locations
-                        .Single(e => e.AuthorId == authorId);
-                return
-                    new LocationDetail
-                    {
-                        AuthorId = entity.AuthorId,
-                        LocationId = entity.LocationId,
-                        LocationName = entity.LocationName,
-                        NumberOfEncounters = entity.NumberOfEncounters
-                    };
+                        .Where(e => e.AuthorId == authorId)
+                        .Select(
+                            e =>
+                                new LocationDetail
+                                {
+                                    AuthorId = e.AuthorId,
+                                    NumberOfEncounters = e.NumberOfEncounters,
+                                    LocationId = e.LocationId,
+                                    LocationName = e.LocationName
+                                }
+                                );
+
+                return entity.ToArray();
             }
         }
 
