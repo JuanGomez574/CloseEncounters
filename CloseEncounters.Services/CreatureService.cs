@@ -50,6 +50,7 @@ namespace CloseEncounters.Services
                             e =>
                                 new CreatureListItem
                                 {
+                                    AuthorId = e.AuthorId,
                                     CreatureId = e.CreatureId,
                                     DescriptionOfCreature = e.DescriptionOfCreature,
                                     CreatureType = e.CreatureType,

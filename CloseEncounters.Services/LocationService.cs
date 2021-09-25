@@ -47,6 +47,7 @@ namespace CloseEncounters.Services
                             e =>
                                 new LocationListItem
                                 {
+                                    AuthorId = e.AuthorId,
                                     NumberOfEncounters= e.NumberOfEncounters,
                                     LocationId = e.LocationId,
                                 }

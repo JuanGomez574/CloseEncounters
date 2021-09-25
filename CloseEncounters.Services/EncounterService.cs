@@ -48,6 +48,7 @@ namespace CloseEncounters.Services
                             e =>
                                 new EncounterListItem
                                 {
+                                    AuthorId = e.AuthorId,
                                     EncounterId = e.EncounterId,
                                     CreatureId = e.CreatureId,
                                     DateOfEncounter = e.DateOfEncounter,

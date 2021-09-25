@@ -11,6 +11,6 @@ namespace CloseEncounters.Models
         public int LocationId { get; set; }
         public int NumberOfEncounters { get; set; }
         public string LocationName { get; set; }
-
+        public Guid AuthorId { get; set; }
     }
 }

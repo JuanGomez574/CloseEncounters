@@ -15,5 +15,6 @@ namespace CloseEncounters.Models
         public string Weight { get; set; }
         public bool MythicalOrFolktale { get; set; }
         public string Name { get; set; }
+        public Guid AuthorId { get; set; }
     }
 }
