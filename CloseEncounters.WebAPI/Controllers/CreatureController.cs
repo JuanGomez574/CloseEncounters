@@ -12,6 +12,10 @@ namespace CloseEncounters.WebAPI.Controllers
 {
     public class CreatureController : ApiController
     {
+        /// <summary>
+        /// Returns all creatures that the current User has created.
+        /// </summary>
+        /// <returns>Creature Object(s)</returns>
         public IHttpActionResult Get()
         {
             var cService = CreateCreatureService();
@@ -19,6 +23,11 @@ namespace CloseEncounters.WebAPI.Controllers
             return Ok(creatures);
         }
 
+        /// <summary>
+        /// Returns all creatures that the specific Author Id has created.
+        /// </summary>
+        /// <param name="authorId"></param>
+        /// <returns>Creature Object(s)</returns>
         public IHttpActionResult Get(Guid authorId)
         {
             CreatureService creatureService = CreateCreatureService();
@@ -26,6 +35,11 @@ namespace CloseEncounters.WebAPI.Controllers
             return Ok(creature);
         }
 
+        /// <summary>
+        /// Returns the creature with the specific Creature Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Creature Object</returns>
         public IHttpActionResult Get(int id)
         {
             CreatureService creatureService = CreateCreatureService();
@@ -33,6 +47,11 @@ namespace CloseEncounters.WebAPI.Controllers
             return Ok(creature);
         }
 
+        /// <summary>
+        /// Creates a creature object and saves it to the database.
+        /// </summary>
+        /// <param name="creature"></param>
+        /// <returns>IHttpActionResult</returns>
         public IHttpActionResult Post(CreatureCreate creature)
         {
             if (!ModelState.IsValid)
@@ -46,6 +65,11 @@ namespace CloseEncounters.WebAPI.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Updates a creature object and saves it to the database.
+        /// </summary>
+        /// <param name="creature"></param>
+        /// <returns>IHttpActionResult</returns>
         public IHttpActionResult Put(CreatureEdit creature)
         {
             if (!ModelState.IsValid)
@@ -61,6 +85,11 @@ namespace CloseEncounters.WebAPI.Controllers
 
         }
 
+        /// <summary>
+        /// Selects a certain creature object with the inputted Creature Id and removes it from the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>IHttpActionResult</returns>
         public IHttpActionResult Delete(int id)
         {
             var service = CreateCreatureService();

@@ -13,19 +13,33 @@ namespace CloseEncounters.WebAPI.Controllers
 {
     public class LocationController : ApiController
     {
+        /// <summary>
+        /// Returns all locations that the current User has created.
+        /// </summary>
+        /// <returns>Location Object(s)</returns>
         public IHttpActionResult Get()
         {
             LocationService locationService = CreateLocationService();
             var Locations = locationService.GetLocations();
             return Ok(Locations);
         }
-
-        public IHttpActionResult Get(Guid authorId)
+        /// <summary>
+        /// Returns all locations that the specific Author Id has created.
+        /// </summary>
+        /// <param name="authorId"></param>
+        /// <returns>Location Object(s)</returns>
+         public IHttpActionResult Get(Guid authorId)
         {
             LocationService locationService = CreateLocationService();
             var location = locationService.GetLocationByAuthorId(authorId);
             return Ok(location);
         }
+
+        /// <summary>
+        /// Returns the location with the specific Location Id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Location Object</returns>
 
         public IHttpActionResult Get(int id)
         {
@@ -33,6 +47,12 @@ namespace CloseEncounters.WebAPI.Controllers
             var location = locationService.GetLocationByLocationId(id);
             return Ok(location);
         }
+
+        /// <summary>
+        /// Creates a location object and saves it to the database.
+        /// </summary>
+        /// <param name="location"></param>
+        /// <returns>IHttpActionResult</returns>
 
         public IHttpActionResult Post(LocationCreate location)
         {
@@ -46,6 +66,12 @@ namespace CloseEncounters.WebAPI.Controllers
 
             return Ok();
         }
+
+        /// <summary>
+        /// Updates a location object and saves it to the database.
+        /// </summary>
+        /// <param name="location"></param>
+        /// <returns>IHttpActionResult</returns>
 
         public IHttpActionResult Put(LocationEdit location)
         {
@@ -61,6 +87,12 @@ namespace CloseEncounters.WebAPI.Controllers
 
 
         }
+
+        /// <summary>
+        /// Selects a certain location object with the inputted Location Id and removes it from the database.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>IHttpActionResult</returns>
 
         public IHttpActionResult Delete(int id)
         {
