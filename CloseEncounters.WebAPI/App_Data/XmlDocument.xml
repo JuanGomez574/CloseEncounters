@@ -522,5 +522,46 @@
             <param name="id"></param>
             <returns>IHttpActionResult</returns>
         </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.EncounterController.Get">
+            <summary>
+            Returns all encounters that the current User has created.
+            </summary>
+            <returns>Encounter Object(s)</returns>
+        </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.EncounterController.Get(System.Guid)">
+            <summary>
+            Returns all encounters that the specific Author Id has created.
+            </summary>
+            <param name="authorId"></param>
+            <returns>Encounter Object(s)</returns>
+        </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.EncounterController.Get(System.Int32)">
+            <summary>
+            Returns the encounter with the specific Encounter Id.
+            </summary>
+            <param name="id"></param>
+            <returns>Encounter Object</returns>
+        </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.EncounterController.Post(CloseEncounters.Models.EncounterCreate)">
+            <summary>
+            Creates a encounter object and saves it to the database.
+            </summary>
+            <param name="encounter"></param>
+            <returns>IHttpActionResult</returns>
+        </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.EncounterController.Put(CloseEncounters.Models.EncounterEdit)">
+            <summary>
+            Updates a encounter object and saves it to the database.
+            </summary>
+            <param name="encounter"></param>
+            <returns>IHttpActionResult</returns>
+        </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.EncounterController.Delete(System.Int32)">
+            <summary>
+            Selects a certain encounter object with the inputted Encounter Id and removes it from the database.
+            </summary>
+            <param name="id"></param>
+            <returns>IHttpActionResult</returns>
+        </member>
     </members>
 </doc>
