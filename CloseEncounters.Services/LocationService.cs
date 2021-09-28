@@ -63,7 +63,7 @@ namespace CloseEncounters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
+                var query =
                     ctx
                         .Locations
                         .Where(e => e.AuthorId == authorId)
@@ -78,7 +78,7 @@ namespace CloseEncounters.Services
                                 }
                                 );
 
-                return entity.ToArray();
+                return query.ToArray();
             }
         }
 
@@ -86,7 +86,7 @@ namespace CloseEncounters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
+                var query =
                     ctx
                         .Locations
                         .Where(e => e.LocationId == id)
@@ -101,7 +101,7 @@ namespace CloseEncounters.Services
                          NumberOfEncounters=e.NumberOfEncounters,
                      }
                     );
-                return entity.ToArray();
+                return query.ToArray();
             }
         }
 
