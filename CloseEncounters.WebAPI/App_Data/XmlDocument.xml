@@ -563,5 +563,46 @@
             <param name="id"></param>
             <returns>IHttpActionResult</returns>
         </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.LocationController.Get">
+            <summary>
+            Returns all locations that the current User has created.
+            </summary>
+            <returns>Location Object(s)</returns>
+        </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.LocationController.Get(System.Guid)">
+            <summary>
+            Returns all locations that the specific Author Id has created.
+            </summary>
+            <param name="authorId"></param>
+            <returns>Location Object(s)</returns>
+        </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.LocationController.Get(System.Int32)">
+            <summary>
+            Returns the location with the specific Location Id.
+            </summary>
+            <param name="id"></param>
+            <returns>Location Object</returns>
+        </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.LocationController.Post(CloseEncounters.Models.LocationCreate)">
+            <summary>
+            Creates a location object and saves it to the database.
+            </summary>
+            <param name="location"></param>
+            <returns>IHttpActionResult</returns>
+        </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.LocationController.Put(CloseEncounters.Models.LocationEdit)">
+            <summary>
+            Updates a location object and saves it to the database.
+            </summary>
+            <param name="location"></param>
+            <returns>IHttpActionResult</returns>
+        </member>
+        <member name="M:CloseEncounters.WebAPI.Controllers.LocationController.Delete(System.Int32)">
+            <summary>
+            Selects a certain location object with the inputted Location Id and removes it from the database.
+            </summary>
+            <param name="id"></param>
+            <returns>IHttpActionResult</returns>
+        </member>
     </members>
 </doc>
