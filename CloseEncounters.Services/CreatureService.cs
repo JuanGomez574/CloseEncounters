@@ -70,7 +70,7 @@ namespace CloseEncounters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
+                var query =
                     ctx
                         .Creatures
                         .Where(e => e.AuthorId == authorId)
@@ -89,7 +89,7 @@ namespace CloseEncounters.Services
                         Weight = e.Weight
                     }
                     );
-                return entity.ToArray();
+                return query.ToArray();
             }
         }
 
@@ -97,7 +97,7 @@ namespace CloseEncounters.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity =
+                var query =
                     ctx
                         .Creatures
                         .Where(e => e.CreatureId == id)
@@ -116,7 +116,7 @@ namespace CloseEncounters.Services
                          Weight = e.Weight
                      }
                     );
-                return entity.ToArray();
+                return query.ToArray();
             }
         }
 
