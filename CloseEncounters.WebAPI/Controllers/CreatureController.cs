@@ -13,7 +13,7 @@ namespace CloseEncounters.WebAPI.Controllers
     public class CreatureController : ApiController
     {
         /// <summary>
-        /// Returns all creatures that the current User has created.
+        /// Returns all creatures that all users have created.
         /// </summary>
         /// <returns>Creature Object(s)</returns>
         public IHttpActionResult Get()

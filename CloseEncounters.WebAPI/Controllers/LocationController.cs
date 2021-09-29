@@ -14,7 +14,7 @@ namespace CloseEncounters.WebAPI.Controllers
     public class LocationController : ApiController
     {
         /// <summary>
-        /// Returns all locations that the current User has created.
+        /// Returns all locations that all users have created.
         /// </summary>
         /// <returns>Location Object(s)</returns>
         public IHttpActionResult Get()
