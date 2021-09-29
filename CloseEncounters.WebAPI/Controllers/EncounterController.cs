@@ -13,7 +13,7 @@ namespace CloseEncounters.WebAPI.Controllers
     public class EncounterController : ApiController
     {
         /// <summary>
-        /// Returns all encounters that the current User has created.
+        /// Returns all encounters that all users have created.
         /// </summary>
         /// <returns>Encounter Object(s)</returns>
         public IHttpActionResult Get()
